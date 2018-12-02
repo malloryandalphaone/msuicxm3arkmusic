@@ -14,7 +14,7 @@ client.on('ready', () => {
 client.channels.get("514076662464249861").join();
     console.log(`Logged in as ${client.user.tag}!`);
     client.user.setStatus("online")
-     client.user.setActivity("! xM3ark ! Is Away ",{type: 'LISTENING'});
+     client.user.setActivity("..",{type: 'LISTENING'});
  
 });
  
@@ -22,7 +22,7 @@ const prefix = "m"
 client.on('message', async msg => { 
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
-    if(msg.author.id !== '518733216266452992') return;
+    if(msg.author.id !== '517378009431408640') return;
     const args = msg.content.split(' ');
     const searchString = args.slice(1).join(' ');
     const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
@@ -31,7 +31,7 @@ client.on('message', async msg => {
     command = command.slice(prefix.length)
 	
     if (command === `play`) {
-    if(msg.author.id !== '518733216266452992') return;
+    if(msg.author.id !== '517378009431408640') return;
         const voiceChannel = msg.member.voiceChannel;
         if (!voiceChannel) return msg.channel.send('يجب آن تكون بروم صوتي.');
         const permissions = voiceChannel.permissionsFor(msg.client.user);
@@ -93,7 +93,7 @@ ${videos.map(video2 => `[${++index} ] \`${video2.title}\``).join('\n')}`)
             return handleVideo(video, msg, voiceChannel);
         }
     } else if (command === `skip`) {
-    if(msg.author.id !== '518733216266452992') return;
+    if(msg.author.id !== '517378009431408640') return;
         if (!msg.member.voiceChannel) return msg.channel.send('يجب دخولك بروم صوتي.');
         if (!serverQueue) return msg.channel.send('لآ يوجد مقطع للتخطي.');
         serverQueue.connection.dispatcher.end('تم تخطي هذآ المقطع.');
@@ -206,8 +206,8 @@ function play(guild, song) {
 
 client.on('message', msg => {
 
-    if (msg.content == 'xM3ark') {
-    if(msg.author.id !== '518733216266452992') return;
+    if (msg.content == 'Mr447') {
+    if(msg.author.id !== '517378009431408640') return;
         if (msg.member.voiceChannel) {
 
      if (msg.member.voiceChannel.joinable) {
