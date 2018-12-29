@@ -11,18 +11,18 @@ const client = new Discord.Client();
 ////////////////////////////////
  
 client.on('ready', () => {
-client.channels.get("514076662464249861").join();
+client.channels.get("528499161167953950").join();
     console.log(`Logged in as ${client.user.tag}!`);
     client.user.setStatus("online")
      client.user.setActivity("..",{type: 'LISTENING'});
  
 });
  
-const prefix = "m"
+const prefix = "!"
 client.on('message', async msg => { 
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
-    if(msg.author.id !== '517378009431408640') return;
+    if(msg.author.id !== '518113766915702789') return;
     const args = msg.content.split(' ');
     const searchString = args.slice(1).join(' ');
     const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
@@ -93,7 +93,7 @@ ${videos.map(video2 => `[${++index} ] \`${video2.title}\``).join('\n')}`)
             return handleVideo(video, msg, voiceChannel);
         }
     } else if (command === `skip`) {
-    if(msg.author.id !== '517378009431408640') return;
+    if(msg.author.id !== '518113766915702789') return;
         if (!msg.member.voiceChannel) return msg.channel.send('يجب دخولك بروم صوتي.');
         if (!serverQueue) return msg.channel.send('لآ يوجد مقطع للتخطي.');
         serverQueue.connection.dispatcher.end('تم تخطي هذآ المقطع.');
@@ -206,8 +206,8 @@ function play(guild, song) {
 
 client.on('message', msg => {
 
-    if (msg.content == 'Mr447') {
-    if(msg.author.id !== '517378009431408640') return;
+    if (msg.content == 'Reeebel') {
+    if(msg.author.id !== '518113766915702789') return;
         if (msg.member.voiceChannel) {
 
      if (msg.member.voiceChannel.joinable) {
@@ -269,4 +269,4 @@ let args = message.content.split(' ').slice(1).join(' ');
   });
 
 
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.M_TOKEN);
